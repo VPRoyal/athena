@@ -1,4 +1,4 @@
-name: Deploy to Athena
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -24,11 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and Export static site
-        run: npm run export
+      - name: Build static site
+        run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Export static HTML and deploy to GitHub Pages
+        uses: aralroca/static-html-export-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
