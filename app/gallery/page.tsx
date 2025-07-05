@@ -3,12 +3,12 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const galleryImages = [
   {
-    src: "/images/gallary-1.jpg",
+    src: "/images/gallary-1.png",
     alt: "Luxury Spa Treatment Room",
     category: "Spa",
   },
   {
-    src: "/images/gallary-2.jpg",
+    src: "/images/gallary-2.png",
     alt: "Hair Styling Session",
     category: "Hair",
   },
@@ -28,7 +28,7 @@ const galleryImages = [
     category: "Bridal",
   },
   {
-    src: "/images/gallary-6.jpg",
+    src: "/images/gallary-6.png",
     alt: "Massage Therapy",
     category: "Massage",
   },
