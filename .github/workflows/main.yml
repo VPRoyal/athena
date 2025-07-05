@@ -27,12 +27,11 @@ jobs:
       - name: Build static site (Next.js 15)
         run: npm run build
 
-      - name: Prepare static export
+      - name: Prepare static export for GitHub Pages
         run: |
           mkdir -p out
+          cp -r .next/server/app/* out/
           cp -r .next/static out/static
-          cp -r public/* out/ || true
-          echo '<meta http-equiv="refresh" content="./">' > out/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
