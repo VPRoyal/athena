@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -24,14 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site (Next.js 15)
+      - name: Build static site
         run: npm run build
 
-      - name: Prepare static export for GitHub Pages
+      - name: Prepare static export folder
         run: |
           mkdir -p out
-          cp -r .next/server/app/* out/
-          cp -r .next/static out/static
+          rsync -a .next/server/app/ out/
+          cp -r .next/static out/static || true
+          cp -r public/* out/ || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
