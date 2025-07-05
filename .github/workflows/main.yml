@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -24,10 +24,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
+      - name: Build static site (Next.js 15)
         run: npm run build
 
-      - name: Export static HTML and deploy to GitHub Pages
-        uses: aralroca/static-html-export-action@v1
+      - name: Prepare static export
+        run: |
+          mkdir -p out
+          cp -r .next/static out/static
+          cp -r public/* out/ || true
+          echo '<meta http-equiv="refresh" content="./">' > out/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
