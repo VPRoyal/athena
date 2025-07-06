@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 const Description = () => {
   return (
-    <section className=" h-svh relative bg-foreground-secondary/10 md:bg-background">
-          <div className="flex w-full h-full gap-x-10 ">
-            <div className="w-full h-auto absolute md:h-full md:w-auto md:relative -z-10 md:z-0 aspect-[3/4]">
+    <section className=" md:h-svh w-full relative bg-background">
+          <div className="flex flex-col md:flex-row w-full h-full gap-x-10 ">
+            <div className="w-full h-auto md:h-full md:w-auto relative  aspect-[4/3] md:aspect-[3/4]">
               <Image
                 src="/images/about-left.png"
                 alt="Athena Professional Team"
@@ -18,7 +18,7 @@ const Description = () => {
               />
             </div>
 
-            <div className='py-20 px-5 md:py-10'>
+            <div className='py-10 px-5 '>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
                 Why Choose Athena?
               </h2>
