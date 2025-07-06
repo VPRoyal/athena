@@ -3,9 +3,9 @@ import Button from "../ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative h-svh">
-      <div className="flex w-full h-full">
-        <div className="p-8 flex flex-col justify-center text-center lg:text-left flex-1">
+    <section className="relative h-svh md:h-svh">
+      <div className="flex flex-col-reverse md:flex-row w-full h-full">
+        <div className="p-8 flex bg-foreground-secondary/30 md:bg-background flex-col justify-center text-center lg:text-left flex-1">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-forward mb-6">
             Athena Body Bar and Saloon{" "}
             <span className="text-gradient text-forward">Where <span className="text-text-primary">Beauty</span>  Meets <span className="text-text-secondary">Wellness</span> </span>
@@ -33,7 +33,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="h-full w-auto relative aspect-[3/4]">
+        <div className="w-full md:h-full md:w-auto md:relative absolute -z-10 aspect-[3/4]">
           <Image
             src="/images/home.png"
             alt="Athena Salon Interior"

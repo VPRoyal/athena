@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <footer className="bg-background text-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap md:flex-nowrap gap-8">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 grow-2 md:grow-0 shrink">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-rose-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
