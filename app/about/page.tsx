@@ -68,7 +68,7 @@ const About = () => {
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-background mb-6">
               About Athena
             </h1>
-            <p className="text-xl text-background/80 max-w-3xl mx-auto">
+            <p className="text-xl text-background/70 max-w-3xl mx-auto">
               Where Beauty Meets Wellness - Discover our story, meet our team, and learn about our commitment to
               excellence in beauty and wellness services.
             </p>
@@ -183,7 +183,7 @@ const About = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground  mb-6">
               Meet Our Expert Team
             </h2>
-            <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Our certified professionals bring years of experience and passion to deliver exceptional beauty and
               wellness services.
             </p>
@@ -234,7 +234,7 @@ const About = () => {
                     <h3 className="font-serif text-xl font-bold text-text-primary mb-4">
                       {achievement.title}
                     </h3>
-                    <p className="text-foreground-secondary/50">{achievement.description}</p>
+                    <p className="text-foreground/70">{achievement.description}</p>
                   </CardContent>
                 </Card>
               )
