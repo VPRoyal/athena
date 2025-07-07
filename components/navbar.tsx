@@ -76,13 +76,16 @@ const Navbar = () => {
               )}
             </Button>
 
-            <Button className="bg-text-secondary text-foreground hover:bg-foreground hover:text-background">
+            <Button className="bg-text-secondary text-background! hover:bg-foreground hover:text-background">
               Book Now
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
+            <Button className="bg-text-secondary hover:bg-foreground text-background!">
+                  Book Now
+                </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -115,26 +118,21 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3  border-t border-foreground mt-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-primary-600 ${
+                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-text-secondary rounded ${
                     pathname === item.href
-                      ? "text-primary-600 dark:text-primary-400"
-                      : "text-gray-700 dark:text-gray-300"
+                      ? "text-background bg-text-secondary"
+                      : "text-foreground"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white">
-                  Book Now
-                </Button>
-              </div>
             </div>
           </div>
         )}
