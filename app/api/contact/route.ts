@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-
+export const runtime = 'nodejs';
 // GoDaddy Email configuration
 const createTransporter = () => {
   return nodemailer.createTransport({
