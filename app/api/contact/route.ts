@@ -18,6 +18,9 @@ const createTransporter = () => {
   });
 };
 
+export async function GET() {
+  return Response.json({ message: "Hello from Lambda!" })
+}
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();

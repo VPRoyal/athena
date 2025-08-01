@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output:"export",
+  // Remove or comment out the static-export mode
+  // output: "export",
+
+  // Keep any other options you need
   images: {
     unoptimized: true,
   },
