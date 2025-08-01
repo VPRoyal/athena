@@ -31,7 +31,7 @@ const Navbar = () => {
   }
   return (
     <nav className="bg-background/50 backdrop-blur-lg shadow-md shadow-foreground/10 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto  ">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -77,15 +77,17 @@ const Navbar = () => {
             </Button>
 
             <Button className="bg-text-secondary text-background! hover:bg-foreground hover:text-background">
-              Book Now
+              <Link href="/contact">
+                Book Now
+              </Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <Button className="bg-text-secondary hover:bg-foreground text-background!">
-                  Book Now
-                </Button>
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors bg-text-secondary hover:bg-foreground text-background! px-4 py-2">
+              Book Now
+            </Link>
             <Button
               variant="ghost"
               size="icon"

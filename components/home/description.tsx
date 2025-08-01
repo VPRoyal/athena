@@ -4,23 +4,21 @@ import Image from 'next/image'
 
 const Description = () => {
   return (
-    <section className=" md:h-svh w-full relative bg-background">
-          <div className="flex flex-col md:flex-row w-full h-full gap-x-10 ">
-            <div className="w-full h-auto md:h-full md:w-auto relative  aspect-[4/3] md:aspect-[3/4]">
+    <section className="md:h-svh w-full relative bg-background">
+          <div className="flex flex-col md:flex-row w-full h-full gap-x-10">
+            <div className="w-full h-auto md:h-full md:w-auto relative aspect-[4/3] md:aspect-[3/4]">
               <Image
                 src="/images/about-left.png"
-                alt="Athena Professional Team"
-                // width={600}
-                // height={400}
+                alt="Athena Spa Professional Therapists"
                 fill
                 priority
                 className="h-full object-fit"
               />
             </div>
 
-            <div className='py-10 px-5 '>
+            <div className='py-10 px-5'>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
-                Why Choose Athena?
+                Why Choose Athena Spa?
               </h2>
 
               <div className="space-y-6">
@@ -29,9 +27,9 @@ const Description = () => {
                     <Star className="h-6 w-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-foreground mb-2">Certified Excellence</h3>
+                    <h3 className="font-semibold text-lg text-foreground mb-2">Certified Wellness Excellence</h3>
                     <p className="text-foreground/80">
-                      Govt. Registered Private Limited Company with certified & trained professionals.
+                      Certified therapists with extensive expertise in massage traditions and holistic wellness, ensuring transformative care every session.
                     </p>
                   </div>
                 </div>
@@ -41,9 +39,9 @@ const Description = () => {
                     <Shield className="h-6 w-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-foreground mb-2">Safety & Privacy</h3>
+                    <h3 className="font-semibold text-lg text-foreground mb-2">Pure & Premium Experience</h3>
                     <p className="text-foreground/80">
-                      Hygienic, premium spa infrastructure with safe & private spaces for families and women.
+                      Natural, botanical products and private suites with soothing ambiance—every detail curated for your comfort and peace of mind.
                     </p>
                   </div>
                 </div>
@@ -53,9 +51,9 @@ const Description = () => {
                     <Users className="h-6 w-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-foreground mb-2">Client Satisfaction</h3>
+                    <h3 className="font-semibold text-lg text-foreground mb-2">Personalized Wellness Journey</h3>
                     <p className="text-foreground/80">
-                      Affordable packages & loyalty memberships with 100% client privacy and satisfaction guaranteed.
+                      Every session begins with consultation and ends with personalized aftercare. Exclusive memberships and thoughtful service guarantee complete satisfaction.
                     </p>
                   </div>
                 </div>

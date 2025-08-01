@@ -20,8 +20,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm">
-              Where Beauty Meets Wellness. Experience luxury spa and salon
-              services in the heart of Jaipur.
+              Where Serenity Meets Wellness. Experience premium spa therapies and holistic healing in Jaipur's most tranquil sanctuary.
             </p>
             <div className="flex space-x-4">
               <Button
@@ -59,15 +58,7 @@ const Footer = () => {
                   href="/services"
                   className="text-gray-400 hover:text-primary-400 transition-colors"
                 >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/gallery"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
-                >
-                  Gallery
+                  Spa Therapies
                 </Link>
               </li>
               <li>
@@ -75,7 +66,7 @@ const Footer = () => {
                   href="/about"
                   className="text-gray-400 hover:text-primary-400 transition-colors"
                 >
-                  About Us
+                  About Athena
                 </Link>
               </li>
               <li>
@@ -83,29 +74,40 @@ const Footer = () => {
                   href="/contact"
                   className="text-gray-400 hover:text-primary-400 transition-colors"
                 >
-                  Contact
+                  Book Consultation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/membership"
+                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  Memberships
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4 ">
+          {/* Spa Services */}
+          <div className="space-y-4">
             <h3 className="font-semibold text-lg text-text-secondary">
-              Services
+              Spa Therapies
             </h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-400">Hair Styling</span>
+                <span className="text-gray-400">Swedish & Deep Tissue Massage</span>
               </li>
               <li>
-                <span className="text-gray-400">Spa Treatments</span>
+                <span className="text-gray-400">Aromatherapy & Balinese</span>
               </li>
               <li>
-                <span className="text-gray-400">Facial Treatments</span>
+                <span className="text-gray-400">Hot Stone Therapy</span>
               </li>
               <li>
-                <span className="text-gray-400">Body Treatments</span>
+                <span className="text-gray-400">Thai Traditional Massage</span>
+              </li>
+              <li>
+                <span className="text-gray-400">Couple Spa Experiences</span>
               </li>
             </ul>
           </div>
@@ -124,34 +126,33 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm">+91-XXXXXXXXXX</span>
+                <span className="text-sm">0141-4564860 | +91-9660099463</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">contact@athenaspa.in</span>
+                <span className="text-sm">bookings@athenabodybar.com</span>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <h4 className="font-medium text-text-secondary">Newsletter</h4>
+            {/* <div className="space-y-2">
+              <h4 className="font-medium text-text-secondary">Wellness Newsletter</h4>
               <div className="flex space-x-2">
                 <Input
                   type="email"
                   placeholder="Your email"
-                  className=" border-foreground text-foreground"
+                  className="border-foreground text-foreground"
                 />
-                <Button className="bg-foreground text-background! hover:bg-text-secondary!">
+                <Button className="bg-foreground text-background hover:bg-text-secondary">
                   Subscribe
                 </Button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Athena Body Bar and Saloon Pvt. Ltd.
-            All rights reserved.
+            © {new Date().getFullYear()} Athena Body Bar & Spa Pvt. Ltd. All rights reserved. | Open Daily: 9 AM - 9 PM
           </p>
         </div>
       </div>

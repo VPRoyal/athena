@@ -30,7 +30,10 @@ export const metadata: Metadata = {
     description: "Premium spa and salon experiences in Jaipur",
     type: "website",
     locale: "en_US",
-  }
+  },
+  icons: {
+    icon: "/images/logo.png",
+  },
 }
 
 export default function RootLayout({

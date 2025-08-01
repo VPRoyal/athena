@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
 
-const merge = (...classes: (string | undefined | false)[]) =>
+const cn = (...classes: (string | undefined | false)[]): string =>
   classes.filter(Boolean).join(" ")
 
 const Popover = PopoverPrimitive.Root
@@ -18,8 +18,8 @@ const PopoverContent = React.forwardRef<
       ref={ref}
       align={align}
       sideOffset={sideOffset}
-      className={merge(
-        "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none",
+      className={cn(
+        "z-50 w-auto rounded-lg border border-pink-200 dark:border-fuchsia-800 bg-white dark:bg-fuchsia-950/95 p-0 shadow-lg outline-none",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -33,6 +33,5 @@ const PopoverContent = React.forwardRef<
     />
   </PopoverPrimitive.Portal>
 ))
-PopoverContent.displayName = PopoverPrimitive.Content.displayName
 
 export { Popover, PopoverTrigger, PopoverContent }

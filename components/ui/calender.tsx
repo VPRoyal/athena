@@ -12,32 +12,32 @@ const merge = (...classes: (string | undefined | false)[]) =>
   classes.filter(Boolean).join(" ")
 
 const CustomNav = ({ nextMonth, previousMonth, onNextClick, onPreviousClick }: any) => (
-  <div className="flex justify-between px-2 py-1">
+  <div className="flex justify-between items-center px-1 py-1">
     <button
       type="button"
+      disabled={!previousMonth}
       onClick={() => onPreviousClick()}
-      className={merge(buttonVariants("outline"), "h-7 w-7 p-0")}
+      className="h-7 w-7 p-0 rounded-md bg-transparent text-pink-600 dark:text-fuchsia-300 hover:bg-pink-100 dark:hover:bg-fuchsia-900/50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
     >
       <ChevronLeft className="h-4 w-4" />
     </button>
     <button
       type="button"
+      disabled={!nextMonth}
       onClick={() => onNextClick()}
-      className={merge(buttonVariants("outline"), "h-7 w-7 p-0")}
+      className="h-7 w-7 p-0 rounded-md bg-transparent text-pink-600 dark:text-fuchsia-300 hover:bg-pink-100 dark:hover:bg-fuchsia-900/50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
     >
       <ChevronRight className="h-4 w-4" />
     </button>
   </div>
 )
 
-
-
-const Calendar=({
+const Calendar = ({
   className,
   classNames,
   showOutsideDays = true,
   ...props
-}: CalendarProps)=> {
+}: CalendarProps) => {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -45,34 +45,39 @@ const Calendar=({
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
+        caption: "flex justify-center pt-1 pb-2 relative items-center",
+        caption_label: "text-sm font-semibold text-[var(--foreground)] dark:text-[var(--background)]",
         nav: "space-x-1 flex items-center",
-        nav_button: merge(
-          buttonVariants("outline"),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
-        ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
+        nav_button: "opacity-0", // Hide default nav buttons
+        nav_button_previous: "hidden",
+        nav_button_next: "hidden",
         table: "w-full border-collapse space-y-1",
-        head_row: "flex",
-        head_cell:
-          "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
-        day: merge(
-          buttonVariants("ghost" ),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+        head_row: "flex mb-1",
+        head_cell: "text-pink-500 dark:text-fuchsia-300 w-9 font-medium text-xs text-center",
+        row: "flex w-full mt-1",
+        cell: merge(
+          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20"
         ),
-        day_range_end: "day-range-end",
-        day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside:
-          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        day_disabled: "text-muted-foreground opacity-50",
-        day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+        day: merge(
+          "h-9 w-9 p-0 font-normal rounded-md transition-colors duration-150",
+          "text-[var(--foreground)] dark:text-[var(--background)]",
+          "hover:bg-pink-100 dark:hover:bg-fuchsia-900/50",
+          "focus:outline-none focus:ring-1 focus:ring-[var(--text-primary)]",
+          "cursor-pointer"
+        ),
+        day_selected: merge(
+          "bg-[var(--text-primary)] text-white font-medium",
+          "hover:bg-[var(--text-secondary)] focus:bg-[var(--text-secondary)]"
+        ),
+        day_today: merge(
+          "bg-pink-100 dark:bg-fuchsia-900/40",
+          "text-[var(--text-primary)] dark:text-[var(--text-secondary)]",
+          "font-medium"
+        ),
+        day_outside: merge(
+          "text-pink-300 dark:text-fuchsia-600 opacity-50"
+        ),
+        day_disabled: "text-pink-200 dark:text-fuchsia-700 opacity-30 cursor-not-allowed",
         day_hidden: "invisible",
         ...classNames,
       }}

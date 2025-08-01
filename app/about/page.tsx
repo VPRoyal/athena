@@ -1,307 +1,153 @@
-import Image from "next/image"
-import Button from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Star, Award, Users, Heart } from "lucide-react"
+import Image from "next/image";
+import Button from "@/components/ui/button";
+import { Heart, Waves, Sparkles } from "lucide-react";
+import Link from "next/link";
 
-
-// Dummy Data
-const teamMembers = [
-  {
-    name: "Priya Sharma",
-    role: "Senior Hair Stylist",
-    experience: "8+ years",
-    specialization: "Hair Coloring & Styling",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    name: "Anjali Gupta",
-    role: "Spa Therapist",
-    experience: "6+ years",
-    specialization: "Body Treatments & Massage",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    name: "Meera Jain",
-    role: "Beauty Expert",
-    experience: "10+ years",
-    specialization: "Facial Treatments & Bridal Makeup",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    name: "Kavita Singh",
-    role: "Wellness Consultant",
-    experience: "5+ years",
-    specialization: "Holistic Wellness Programs",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-]
-
-const achievements = [
-  {
-    icon: Star,
-    title: "500+ Happy Clients",
-    description: "Trusted by hundreds of satisfied customers",
-  },
-  {
-    icon: Award,
-    title: "Certified Professionals",
-    description: "Government registered with trained experts",
-  },
-  {
-    icon: Users,
-    title: "Family-Friendly",
-    description: "Safe and private spaces for all",
-  },
-  {
-    icon: Heart,
-    title: "100% Satisfaction",
-    description: "Guaranteed quality and privacy",
-  },
-]
-const About = () => {
+export default function About() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-text-primary to-text-secondary ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-background mb-6">
-              About Athena
-            </h1>
-            <p className="text-xl text-background/70 max-w-3xl mx-auto">
-              Where Beauty Meets Wellness - Discover our story, meet our team, and learn about our commitment to
-              excellence in beauty and wellness services.
-            </p>
-          </div>
+    <main className="min-h-screen font-sans transition-colors duration-300
+      bg-gradient-to-br from-[var(--background)] via-[var(--background-secondary)] to-white
+      dark:from-[var(--foreground)] dark:to-zinc-950 text-[var(--foreground)] dark:text-[var(--background)]">
+
+      {/* HERO SPLIT: IMAGE | TEXT */}
+      <section className="min-h-[60vh] md:min-h-[70vh] flex flex-col-reverse md:flex-row items-center md:items-stretch gap-0 px-0 mb-0 relative">
+        
+        {/* Left: Large Brand Image */}
+        <div className="w-full md:w-1/2 h-60 md:h-auto relative">
+          <div className="absolute  rounded-[3rem] lg:rounded-none pointer-events-none" />
+          <Image
+            src="/images/customer-1.png" // <-- Replace with your signature spa/brand visual!
+            alt="Athena Spa Sanctuary"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="rounded-[3rem] lg:rounded-none"
+            priority
+          />
         </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                Our Story
-              </h2>
-              <div className="space-y-4 text-foreground/80">
-                <p className="text-lg">
-                  Athena Body Bar and Saloon was born from a vision to create a sanctuary where beauty and wellness
-                  converge in perfect harmony. Located in the heart of Jaipur, we have established ourselves as a
-                  premier destination for luxury spa and salon experiences.
-                </p>
-                <p>
-                  Our journey began with a simple belief: that everyone deserves to feel beautiful, confident, and
-                  rejuvenated. We combine traditional wellness practices with modern beauty techniques to offer our
-                  clients an unparalleled experience.
-                </p>
-                <p>
-                  As a government-registered private limited company, we maintain the highest standards of
-                  professionalism, hygiene, and client satisfaction. Our certified professionals are passionate about
-                  helping you discover your best self.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative">
-              <Image
-                src="/images/customer-1.png"
-                alt="Athena Salon Interior"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Values */}
-      <section className="py-16 bg-gradient-to-r from-foreground to-foreground/80 text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Our Mission & Values</h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-serif text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-lg text-background/90 mb-6">
-                To provide exceptional beauty and wellness services that enhance our clients' natural beauty while
-                promoting overall well-being. We strive to create a luxurious, safe, and welcoming environment where
-                every client feels valued and pampered.
-              </p>
-
-              <h3 className="font-serif text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-lg text-background/90">
-                To be recognized as Jaipur's leading beauty and wellness destination, setting new standards for
-                excellence in service, hygiene, and client satisfaction.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-serif text-2xl font-bold mb-6">Our Core Values</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-background rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Excellence</h4>
-                    <p className="text-background/90">Delivering the highest quality services with attention to detail</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-background rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Safety & Hygiene</h4>
-                    <p className="text-background/90">Maintaining pristine cleanliness and safety standards</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-background rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Client-Centric</h4>
-                    <p className="text-background/90">Putting our clients' needs and satisfaction first</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-background rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Innovation</h4>
-                    <p className="text-background/90">Embracing the latest techniques and technologies</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground  mb-6">
-              Meet Our Expert Team
-            </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Our certified professionals bring years of experience and passion to deliver exceptional beauty and
-              wellness services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow text-center bg-text-secondary/80">
-                <CardContent className="p-6!">
-                  <div className="relative mb-6">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="w-32 h-32 rounded-full mx-auto object-cover"
-                    />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-2">{member.name}</h3>
-                  <p className="text-background font-semibold mb-2">{member.role}</p>
-                  <p className="text-sm text-foreground/80 font-semibold mb-2">{member.experience}</p>
-                  <p className="text-sm text-foreground-secondary/80 ">{member.specialization}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements */}
-      <section className="py-16 bg-text-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Why Choose Athena?
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => {
-              const IconComponent = achievement.icon
-              return (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow text-center bg-background">
-                  <CardContent className="py-6! px-4!">
-                    <div className="w-16 h-16 bg-text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                      <IconComponent className="h-8 w-8 text-background" />
-                    </div>
-                    <h3 className="font-serif text-xl font-bold text-text-primary mb-4">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-foreground/70">{achievement.description}</p>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-secondary mb-6">
-              Client Testimonials
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="border-l-4 border-text-secondary shadow-lg">
-              <CardContent className="p-8">
-                <p className="text-lg text-foreground/70 mb-6 italic">
-                  "One of the best spa experiences I've ever had. Athena offers comfort, care, and calmness. A true
-                  oasis in Jaipur!"
-                </p>
-                <div className="text-right">
-                  <p className="font-semibold text-foreground">— Ritika Mehra</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-text-secondary shadow-lg">
-              <CardContent className="p-8">
-                <p className="text-lg text-foreground/70 mb-6 italic">
-                  "Their bridal services were phenomenal. The makeup stayed perfect throughout my big day!"
-                </p>
-                <div className="text-right">
-                  <p className="font-semibold text-foreground">— Sneha Rathore</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-text-primary to-background/30 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6 text-foreground">Experience the Athena Difference</h2>
-          <p className="text-xl mb-8 text-foreground/70">
-            Join hundreds of satisfied clients who have made Athena their trusted partner in beauty and wellness.
+        
+        {/* Right: Text and CTA */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-6 py-12 md:p-16 bg-gradient-to-bl from-white/60 via-pink-50/80 to-fuchsia-100/50 dark:from-fuchsia-950/90 dark:via-zinc-900 dark:to-black ">
+          <span className="uppercase tracking-widest text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-primary)] mb-4 block">
+            About Athena
+          </span>
+          <h1 className="font-serif text-2xl md:text-3xl font-bold leading-tight mb-4 bg-clip-text text-transparent
+            bg-gradient-to-tr from-pink-500 via-fuchsia-400 to-rose-400 dark:from-pink-200 dark:to-fuchsia-300">
+            Serenity, Reimagined
+          </h1>
+          <p className="text-base md:text-lg text-[var(--foreground-secondary)] dark:text-pink-100/80 mb-7">
+            Step inside Jaipur’s refined oasis—where ancient wisdom meets luxury wellness. Every Athena ritual is curated to nourish your body, still your mind, and inspire your spirit.  
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-background text-foreground hover:bg-background/80 px-8 py-3">
-              Book Your Appointment
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-background! text-background! hover:bg-foreground px-8 py-3 bg-transparent"
-            >
-              Visit Our Salon
-            </Button>
+          <Button
+            className="bg-[var(--text-primary)] hover:bg-[var(--text-secondary)] text-[var(--background-secondary)] dark:bg-[var(--text-primary)] dark:hover:bg-[var(--text-secondary)] dark:text-[var(--background)] font-bold px-8 py-3 rounded-full transition shadow self-start"
+            size="lg"
+          >
+            Book Your Escape
+          </Button>
+        </div>
+      </section>
+
+      {/* STORY & PHILOSOPHY */}
+      <section className="py-10 md:py-16 bg-gradient-to-r from-[var(--background-secondary)] to-pink-50 dark:from-fuchsia-950/80 dark:to-zinc-900 transition">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-4">
+          {/* Story */}
+          <div>
+            <h2 className="font-serif text-xl md:text-2xl font-bold text-left mb-4 text-[var(--text-secondary)] dark:text-[var(--text-primary)]">
+              Our Story
+            </h2>
+            <div className="rounded-xl bg-white/80 dark:bg-fuchsia-950/90 shadow-lg p-6 md:p-8 border border-pink-100 dark:border-fuchsia-900">
+              <p className="text-base md:text-lg text-[var(--foreground-secondary)] dark:text-pink-100/90">
+                Athena Spa & Bodybar was envisioned to bring authentic, gentle healing and sublime tranquility to Jaipur.  
+                In our sanctuary, the journey is as enriching as the destination—guided by expert hands, mindful of every detail, and rooted in care.
+                <br /><br />
+                Our blend of ancient therapies and modern techniques is dedicated to your transformation and peace.
+              </p>
+            </div>
+          </div>
+          {/* Philosophy */}
+          <div>
+            <h2 className="font-serif text-xl md:text-2xl font-bold text-left mb-4 text-[var(--text-secondary)] dark:text-[var(--text-primary)]">
+              Our Philosophy
+            </h2>
+            <div className="rounded-xl bg-white/80 dark:bg-fuchsia-950/90 shadow-lg p-6 md:p-8 border border-pink-100 dark:border-fuchsia-900">
+              <ul className="space-y-5 text-[var(--foreground-secondary)] dark:text-pink-100/85 text-base">
+                <li className="flex items-start gap-3">
+                  <Heart className="mt-1 w-5 h-5 text-fuchsia-400 dark:text-pink-200" />
+                  <span>
+                    <b>Personalized Journeys:</b> Every session begins with a bespoke consultation, tailored just for you.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Waves className="mt-1 w-5 h-5 text-pink-400 dark:text-fuchsia-200" />
+                  <span>
+                    <b>Harmony of Science & Soul:</b> We unite traditional therapies with advanced techniques for total well-being.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="mt-1 w-5 h-5 text-yellow-400 dark:text-yellow-200" />
+                  <span>
+                    <b>Only the Purest Touch:</b> Botanical oils and world-class spa products—gentle, safe, and always effective.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-    </div>
-  )
-}
 
-export default About
+      {/* THE ATHENA DIFFERENCE */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-pink-100 via-fuchsia-50 to-white dark:from-black dark:via-fuchsia-950/60 dark:to-zinc-900 transition">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="font-serif text-xl md:text-2xl font-bold mb-10 text-left md:text-center 
+            text-[var(--text-secondary)] dark:text-[var(--text-primary)]"
+          >The Athena Difference</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-2xl bg-white/90 dark:bg-fuchsia-950/90 p-8 shadow-xl border border-pink-100 dark:border-fuchsia-900">
+              <h3 className="font-serif font-semibold text-base md:text-lg text-[var(--text-primary)] dark:text-fuchsia-200 mb-2">Certified, Caring Therapists</h3>
+              <p className="text-[var(--foreground-secondary)] dark:text-pink-100/80 text-sm md:text-base">
+                Meticulous, expert, and always empathetic—our certified team brings deep tradition and genuine care to every session.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/90 dark:bg-fuchsia-950/90 p-8 shadow-xl border border-pink-100 dark:border-fuchsia-900">
+              <h3 className="font-serif font-semibold text-base md:text-lg text-[var(--text-primary)] dark:text-fuchsia-200 mb-2">A Sanctuary for Senses</h3>
+              <p className="text-[var(--foreground-secondary)] dark:text-pink-100/80 text-sm md:text-base">
+                Private suites, tranquil lighting, and gentle music set the mood for soulful relaxation.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/90 dark:bg-fuchsia-950/90 p-8 shadow-xl border border-pink-100 dark:border-fuchsia-900">
+              <h3 className="font-serif font-semibold text-base md:text-lg text-[var(--text-primary)] dark:text-fuchsia-200 mb-2">Committed to Purity</h3>
+              <p className="text-[var(--foreground-secondary)] dark:text-pink-100/80 text-sm md:text-base">
+                From pure massage oils to eco-selected products—every detail is chosen for purity, health, and environmental consciousness.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/90 dark:bg-fuchsia-950/90 p-8 shadow-xl border border-pink-100 dark:border-fuchsia-900">
+              <h3 className="font-serif font-semibold text-base md:text-lg text-[var(--text-primary)] dark:text-fuchsia-200 mb-2">Custom Aftercare</h3>
+              <p className="text-[var(--foreground-secondary)] dark:text-pink-100/80 text-sm md:text-base">
+                Every session ends with hydration, relaxation, and tips for lasting wellness in daily life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 py-16 bg-gradient-to-r from-[var(--text-primary)] via-fuchsia-400 to-pink-500 dark:from-fuchsia-900 dark:via-pink-950 dark:to-black">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-serif text-xl md:text-2xl font-bold mb-5 text-white drop-shadow">
+            Begin Your Renewal at Athena
+          </h2>
+          <p className="mb-7 text-base md:text-lg text-pink-100/90">
+            Wellness is your birthright. Experience it in an oasis crafted for your senses and your soul.
+          </p>
+          <Button
+            className="bg-white text-[var(--text-primary)] hover:bg-pink-100 font-bold px-8 py-3 rounded-full shadow-lg"
+            size="lg"
+          >
+            <Link href="/contact">
+              Book Your Spa Journey
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </main>
+  );
+}
