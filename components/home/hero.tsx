@@ -19,7 +19,7 @@ const Hero = () => {
               size="lg"
               className="bg-text-secondary hover:bg-foreground text-foreground hover:text-background px-8 py-3"
             >
-              <Link href="/contact">
+              <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110">
                 Book Your Escape
               </Link>
             </Button>

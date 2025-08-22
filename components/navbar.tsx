@@ -77,7 +77,7 @@ const Navbar = () => {
             </Button>
 
             <Button className="bg-text-secondary text-background! hover:bg-foreground hover:text-background">
-              <Link href="/contact">
+              <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110">
                 Book Now
               </Link>
             </Button>
@@ -85,7 +85,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors bg-text-secondary hover:bg-foreground text-background! px-4 py-2">
+            <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors bg-text-secondary hover:bg-foreground text-background! px-4 py-2">
               Book Now
             </Link>
             <Button

@@ -41,7 +41,9 @@ export default function About() {
             className="bg-[var(--text-primary)] hover:bg-[var(--text-secondary)] text-[var(--background-secondary)] dark:bg-[var(--text-primary)] dark:hover:bg-[var(--text-secondary)] dark:text-[var(--background)] font-bold px-8 py-3 rounded-full transition shadow self-start"
             size="lg"
           >
-            Book Your Escape
+            <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110">
+              Book Your Escape
+            </Link>
           </Button>
         </div>
       </section>
@@ -142,7 +144,7 @@ export default function About() {
             className="bg-white text-[var(--text-primary)] hover:bg-pink-100 font-bold px-8 py-3 rounded-full shadow-lg"
             size="lg"
           >
-            <Link href="/contact">
+            <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110">
               Book Your Spa Journey
             </Link>
           </Button>

@@ -286,7 +286,7 @@ export default function Services() {
               size="lg"
               className="bg-text-primary hover:bg-text-secondary text-background dark:bg-text-primary dark:hover:bg-text-secondary dark:text-background font-bold px-8"
               >
-              <Link href="/contact">
+              <Link href="https://www.welns.io/product/booking/WFRCHN613855/AthenaBodyBarandSaloonPvtLtd360541?bk_src=GMAPS110">
                 Book Appointment
               </Link>
             </Button>
